@@ -48,5 +48,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --coverage --env=jsdom",
     "test:watch": "node scripts/test.js --env=jsdom"
+  },
+  "devDependencies": {
+    "prop-types": "^15.6.1"
   }
 }
