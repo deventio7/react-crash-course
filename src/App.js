@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      componentText: 'initialized text'
+      componentText: '1'
     }
   };
 
@@ -28,7 +28,7 @@ class App extends Component {
         </header>
         <div className="App-body">
           <SampleChildComponent pureComponentTextSetter={ this.componentTextSetter }/>
-          <PureChildComponent passedText={ this.state.componentText }/>
+          <PureChildComponent passedInt={ this.state.componentText }/>
         </div>
       </div>
     );
