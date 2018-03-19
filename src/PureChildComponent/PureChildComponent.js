@@ -12,14 +12,16 @@ const PureChildComponent = ({ passedText }) => {
   );
 }
 
-PureChildComponent.propTypes = {
-  passedText: PropTypes.string.isRequired
-}
-
+/* istanbul ignore next */
 const mapStateToProps = (state) => {
   return {
     passedText: state.sampleChildSubmit.passedText
   };
+}
+
+
+PureChildComponent.propTypes = {
+  passedText: PropTypes.string.isRequired
 }
 
 export { PureChildComponent };

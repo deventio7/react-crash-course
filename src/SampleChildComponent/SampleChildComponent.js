@@ -34,6 +34,7 @@ export class SampleChildComponent extends Component {
   }
 }
 
+/* istanbul ignore next */
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(SampleChildComponentActions, dispatch)

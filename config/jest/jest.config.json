@@ -2,6 +2,9 @@
   "collectCoverageFrom": [
     "src/*/**/*.{js,jsx,mjs}"
   ],
+  "coveragePathIgnorePatterns": [
+    "index.js"
+  ],
   "setupFiles": [
     "<rootDir>/config/polyfills.js"
   ],

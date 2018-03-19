@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SampleChildComponentActions should dispatch action SAMPLE_CHILD_COMPONENT_SUBMIT 1`] = `
+Object {
+  "payload": "TEST VALUE",
+  "type": "SAMPLE_CHILD_COMPONENT_SUBMIT",
+}
+`;
