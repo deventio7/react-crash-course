@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const PureChildComponent = ({ passedText }) => {
@@ -11,12 +12,14 @@ const PureChildComponent = ({ passedText }) => {
   );
 }
 
-PureChildComponent.defaultProps = {
-  passedText: 'nothing.'
-}
-
 PureChildComponent.propTypes = {
-  passedText: PropTypes.string
+  passedText: PropTypes.string.isRequired
 }
 
-export default PureChildComponent;
+const mapStateToProps = (state) => {
+  return {
+    passedText: state.sampleChildSubmit.passedText
+  };
+}
+
+export default connect(mapStateToProps)(PureChildComponent);

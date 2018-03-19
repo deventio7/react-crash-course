@@ -5,19 +5,6 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      componentText: 'initialized text'
-    }
-  };
-
-  componentTextSetter = (newText) => {
-    this.setState({
-      componentText: newText
-    });
-  };
-
   render = () => {
     console.log('Rendering App');
     return (
@@ -27,8 +14,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-body">
-          <SampleChildComponent pureComponentTextSetter={ this.componentTextSetter }/>
-          <PureChildComponent passedText={ this.state.componentText }/>
+          <SampleChildComponent/>
+          <PureChildComponent/>
         </div>
       </div>
     );

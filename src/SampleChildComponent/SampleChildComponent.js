@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import SampleChildComponentActions from './SampleChildComponentActions';
 
 class SampleChildComponent extends Component {
   constructor() {
@@ -9,12 +12,8 @@ class SampleChildComponent extends Component {
     }
   };
 
-  static defaultProps = {
-    someOtherProp: { foo: 'bar' }
-  }
-
   submit = () => {
-    this.props.pureComponentTextSetter(this.state.inputText);
+    this.props.actions.submit(this.state.inputText);
   }
 
   updateInputValue = (event) => {
@@ -29,14 +28,20 @@ class SampleChildComponent extends Component {
       <div>
         SampleChildComponent<br/>
         <input type="text" onChange={ this.updateInputValue }/>
-        <button onClick={ this.submit.bind(this) }>submit</button>
+        <button onClick={ this.submit }>submit</button>
       </div>
     );
   }
 }
 
-SampleChildComponent.propTypes = {
-  pureComponentTextSetter: PropTypes.func.isRequired,
-  someOtherProp: PropTypes.any
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(SampleChildComponentActions, dispatch)
+  }
 }
-export default SampleChildComponent;
+
+SampleChildComponent.propTypes = {
+  actions: PropTypes.object.isRequired
+}
+
+export default connect(undefined, mapDispatchToProps)(SampleChildComponent);

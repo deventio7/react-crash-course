@@ -50,6 +50,9 @@
     "test:watch": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-immutable-state-invariant": "^2.1.0"
   }
 }
