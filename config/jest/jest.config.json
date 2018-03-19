@@ -1,6 +1,6 @@
 {
   "collectCoverageFrom": [
-    "src/**/*.{js,jsx,mjs}"
+    "src/*/**/*.{js,jsx,mjs}"
   ],
   "setupFiles": [
     "<rootDir>/config/polyfills.js"
@@ -31,5 +31,6 @@
     "web.jsx",
     "jsx",
     "node"
-  ]
+  ],
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
 }

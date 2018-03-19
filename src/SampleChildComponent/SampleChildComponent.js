@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SampleChildComponentActions from './SampleChildComponentActions';
 
-class SampleChildComponent extends Component {
+export class SampleChildComponent extends Component {
   constructor() {
     super();
     this.state = {

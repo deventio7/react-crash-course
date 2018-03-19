@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import PureChildComponentReducers from './PureChildComponent/PureChildComponentReducers';
 
 const Reducers = combineReducers({
-    ...PureChildComponentReducers
+  ...PureChildComponentReducers
 });
 
 export default Reducers;

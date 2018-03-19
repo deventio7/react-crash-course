@@ -46,10 +46,14 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --coverage --env=jsdom",
-    "test:watch": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --coverage",
+    "test:update": "node scripts/test.js --coverage -u",
+    "test:watch": "node scripts/test.js"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "prop-types": "^15.6.1",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
