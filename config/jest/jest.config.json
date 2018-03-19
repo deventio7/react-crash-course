@@ -6,7 +6,8 @@
     "index.js"
   ],
   "setupFiles": [
-    "<rootDir>/config/polyfills.js"
+    "<rootDir>/config/polyfills.js",
+    "<rootDir>/config/jest/testSetup.js"
   ],
   "testMatch": [
     "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
