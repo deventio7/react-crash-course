@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PureChildComponent renders and matches snapshot 1`] = `
+<div>
+  PureChildComponent
+  <br />
+  THIS COMPONENT RECEIVED: '
+  TEST TEXT
+  '
+</div>
+`;

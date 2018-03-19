@@ -22,4 +22,5 @@ const mapStateToProps = (state) => {
   };
 }
 
+export { PureChildComponent };
 export default connect(mapStateToProps)(PureChildComponent);

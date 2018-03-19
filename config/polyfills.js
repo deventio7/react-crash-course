@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 'use strict';
 
 configure({ adapter: new Adapter() });
+global.console.log = jest.fn();
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
