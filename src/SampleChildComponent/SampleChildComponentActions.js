@@ -1,6 +1,6 @@
 import SampleChildComponentActionTypes from './SampleChildComponentActionTypes';
 
-const submit = (text) => {
+const updateStoredText = (text) => {
   return {
     type: SampleChildComponentActionTypes.SAMPLE_CHILD_COMPONENT_SUBMIT,
     payload: text
@@ -8,5 +8,5 @@ const submit = (text) => {
 }
 
 export default {
-	submit
+	updateStoredText
 }
