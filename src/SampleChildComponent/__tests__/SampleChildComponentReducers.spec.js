@@ -1,12 +1,12 @@
-import SampleChildComponentActionTypes from '../../SampleChildComponent/SampleChildComponentActionTypes';
-import PureChildComponentReducers from '../PureChildComponentReducers';
+import SampleChildComponentActionTypes from '../SampleChildComponentActionTypes';
+import SampleChildComponentReducers from '../SampleChildComponentReducers';
 
-describe('PureChildComponentReducers', () => {
+describe('SampleChildComponentReducers', () => {
   it('should return initial state', () => {
     const otherAction = {
       type: 'test'
     };
-    const result = PureChildComponentReducers.sampleChildSubmit(undefined, otherAction);
+    const result = SampleChildComponentReducers.sampleChildSubmit(undefined, otherAction);
     expect(result).toMatchSnapshot();
   });
 
@@ -15,7 +15,7 @@ describe('PureChildComponentReducers', () => {
       type: SampleChildComponentActionTypes.SAMPLE_CHILD_COMPONENT_SUBMIT,
       payload: 'TEST TEXT'
     };
-    const result = PureChildComponentReducers.sampleChildSubmit(undefined, createAlertAction);
+    const result = SampleChildComponentReducers.sampleChildSubmit(undefined, createAlertAction);
     expect(result).toMatchSnapshot();
   });
 });

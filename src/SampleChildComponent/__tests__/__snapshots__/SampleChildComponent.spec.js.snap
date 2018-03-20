@@ -2,7 +2,7 @@
 
 exports[`SampleChildComponent renders and matches snapshot 1`] = `
 <div>
-  SampleChildComponent
+  SampleChildComponent: 
   <br />
   <input
     onChange={[Function]}

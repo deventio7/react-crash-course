@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PureChildComponent } from '../PureChildComponent';
+import PureChildComponent from '../PureChildComponent';
 
 describe('PureChildComponent', () => {
   it('renders and matches snapshot', () => {

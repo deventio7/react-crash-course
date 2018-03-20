@@ -5,8 +5,10 @@ import { SampleChildComponent } from '../SampleChildComponent';
 describe('SampleChildComponent', () => {
   const basicProps = {
     actions: {
-      submit: jest.fn()
-    }
+      updateStoredText: jest.fn()
+    },
+    pureComponentTextSetter: jest.fn(),
+    storedText: ''
   }
 
   beforeEach(() => {
@@ -18,22 +20,22 @@ describe('SampleChildComponent', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('updateInputValue changes state', () => {
-    const wrapper = shallow(<SampleChildComponent {...basicProps} />).instance();
-    jest.spyOn(wrapper, 'setState');
-    wrapper.updateInputValue({
+  it('updateInputValue calls action', () => {
+    const wrapper = shallow(<SampleChildComponent {...basicProps} />);
+    wrapper.instance().updateInputValue({
       target: {
         value: 'TEST VALUE'
       }
     });
-    expect(wrapper.setState).toBeCalledWith({ inputText: 'TEST VALUE' });
-    expect(wrapper.state.inputText).toBe('TEST VALUE');
+    expect(basicProps.actions.updateStoredText).toBeCalledWith('TEST VALUE');
   });
 
-  it('submit calls action', () => {
-    const wrapper = shallow(<SampleChildComponent {...basicProps} />).instance();
-    wrapper.state.inputText = 'TEST VALUE';
-    wrapper.submit();
-    expect(basicProps.actions.submit).toBeCalledWith('TEST VALUE');
+  it('submit calls function to propogate data up', () => {
+    const wrapper = shallow(<SampleChildComponent {...basicProps} />);
+    wrapper.setProps({
+      storedText: 'TEST VALUE'
+    });
+    wrapper.instance().submit();
+    expect(basicProps.pureComponentTextSetter).toBeCalledWith('TEST VALUE');
   });
 });

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SampleChildComponentReducers should change state appropriately when receiving SAMPLE_CHILD_COMPONENT_SUBMIT 1`] = `
+Object {
+  "storedText": "TEST TEXT",
+}
+`;
+
+exports[`SampleChildComponentReducers should return initial state 1`] = `
+Object {
+  "storedText": "",
+}
+`;

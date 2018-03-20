@@ -21,8 +21,12 @@ exports[`App render shallow matches snap 1`] = `
   <div
     className="App-body"
   >
-    <Connect(SampleChildComponent) />
-    <Connect(PureChildComponent) />
+    <Connect(SampleChildComponent)
+      pureComponentTextSetter={[Function]}
+    />
+    <PureChildComponent
+      passedText="uninitialized text"
+    />
   </div>
 </div>
 `;
