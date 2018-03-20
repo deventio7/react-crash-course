@@ -1,7 +1,7 @@
-import SampleChildComponentActionTypes from '../SampleChildComponent/SampleChildComponentActionTypes';
+import SampleChildComponentActionTypes from './SampleChildComponentActionTypes';
 
 const initialState = {
-	passedText: 'initial text'
+	storedText: ''
 }
 
 const sampleChildSubmit = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const sampleChildSubmit = (state = initialState, action) => {
 		case SampleChildComponentActionTypes.SAMPLE_CHILD_COMPONENT_SUBMIT:
 			return {
 				...state,
-				passedText: action.payload
+				storedText: action.payload
 			};
 		default:
 			return state;

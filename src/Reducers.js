@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import PureChildComponentReducers from './PureChildComponent/PureChildComponentReducers';
+import SampleChildComponentReducers from './SampleChildComponent/SampleChildComponentReducers';
 
 const Reducers = combineReducers({
-    ...PureChildComponentReducers
+    ...SampleChildComponentReducers
 });
 
 export default Reducers;

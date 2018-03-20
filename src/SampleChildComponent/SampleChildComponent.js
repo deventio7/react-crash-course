@@ -5,33 +5,30 @@ import PropTypes from 'prop-types';
 import SampleChildComponentActions from './SampleChildComponentActions';
 
 class SampleChildComponent extends Component {
-  constructor() {
-    super();
-    this.state = {
-      inputText: ''
-    }
-  };
-
   submit = () => {
-    this.props.actions.submit(this.state.inputText);
+    this.props.pureComponentTextSetter(this.props.storedText);
   }
 
   updateInputValue = (event) => {
-    this.setState({
-      inputText: event.target.value
-    });
+    this.props.actions.updateStoredText(event.target.value);
   }
 
   render = () => {
     console.log('Rendering SampleChildComponent');
     return (
       <div>
-        SampleChildComponent<br/>
+        SampleChildComponent: { this.props.storedText }<br/>
         <input type="text" onChange={ this.updateInputValue }/>
         <button onClick={ this.submit }>submit</button>
       </div>
     );
   }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    storedText: state.sampleChildSubmit.storedText
+  };
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -41,7 +38,9 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 SampleChildComponent.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  pureComponentTextSetter: PropTypes.func.isRequired,
+  storedText: PropTypes.string.isRequired
 }
 
-export default connect(undefined, mapDispatchToProps)(SampleChildComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SampleChildComponent);
